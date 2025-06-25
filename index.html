@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="query.css" />
+		<link rel="shortcut icon" href="favicon.png" type="image/png" />
+		<title>Step Logic</title>
+		<script defer src="script.js"></script>
+	</head>
+	<body>
+		<header class="header" id="header">
+			<div class="container">
+				<div class="logo">StepLogic</div>
+				<div class="entry entry--step">Take a step</div>
+			</div>
+		</header>
+
+		<main class="main" id="main">
+			<section class="section-step">
+				<div class="container">
+					<div class="steps-cover">
+						<div class="progress-line">
+							<div class="progress-fill" id="progress"></div>
+						</div>
+
+						<div class="steps-inner">
+							<div class="step step-1">
+								<div class="circle">
+									<div class="inner-circle">1</div>
+								</div>
+								<p class="step-number">Step 1</p>
+								<p class="step-sequence">1st Step</p>
+								<p class="step-situation step--completed">Completed</p>
+							</div>
+
+							<div class="step step-2">
+								<div class="circle">
+									<div class="inner-circle">2</div>
+								</div>
+								<p class="step-number">Step 2</p>
+								<p class="step-sequence">2nd Step</p>
+								<p class="step-situation step--progress">In Progress</p>
+							</div>
+
+							<div class="step step-3">
+								<div class="circle">
+									<div class="inner-circle">3</div>
+								</div>
+								<p class="step-number">Step 3</p>
+								<p class="step-sequence">3rd Step</p>
+								<p class="step-situation step--pending">Pending</p>
+							</div>
+						</div>
+					</div>
+
+					<button class="btn" id="btn--prev" disabled>Prev</button>
+					<button class="btn" id="btn--next">Next</button>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer" id="footer">
+			<div class="container">
+				<p>
+					&copy; Copyright by <a href="https://www.linkedin.com/in/nijat-guliyev-1949a4294" target="_blank" rel="noopener noreferrer"><strong>Nijat Guliyev</strong></a>
+					<span id="year"></span>
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

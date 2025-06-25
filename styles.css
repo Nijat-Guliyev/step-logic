@@ -1,0 +1,239 @@
+:root {
+	--background: linear-gradient(135deg, #0d1b2a, #1e2e45, #34475e);
+	--text-gradient: linear-gradient(to right, #ff6ec4, #7873f5);
+	--primary-text--color: #f5f5f5;
+	--secondary-text--color: #333333;
+	--tertiary-text--color: #9fa6b2;
+	--circle-color: #ffffff;
+	--line-border--empty: #555c66;
+	--line-border--fill: #00b894;
+	--situation-text-color1: #228b22;
+	--situation-text-color2: #dc143c;
+	--situation-text-color3: #1e90ff;
+	--font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+	height: 100%;
+}
+
+body {
+	background: var(--background);
+	color: var(--primary-text--color);
+}
+
+.container {
+	max-width: 90rem;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+#header {
+	> div {
+		height: 8rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.logo {
+		margin-top: 1rem;
+		padding: 1rem;
+		font: 700 4rem var(--font-family);
+		background: var(--text-gradient);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.entry--step {
+		padding: 0.5rem 2rem;
+		color: var(--primary-text--color);
+		border: 0.1rem solid var(--primary-text--color);
+		border-radius: 0.7rem;
+		font: 500 1.6rem var(--font-family);
+		text-decoration: none;
+	}
+}
+
+#main {
+	height: 72rem;
+	margin-block: auto;
+
+	.section-step {
+		height: 50vh;
+		margin-top: 10rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
+
+	.steps-cover {
+		width: 60rem;
+		padding: 3rem;
+		margin-bottom: 3rem;
+		position: relative;
+		border-radius: 0.7rem;
+		background-color: #1e2e45;
+		overflow: hidden;
+	}
+
+	.progress-line {
+		position: absolute;
+		top: calc(3rem + 1.6rem);
+		left: 6rem;
+		width: calc(100% - 2 * 6rem);
+		height: 0.4rem;
+		background-color: var(--line-border--empty);
+		border-radius: 1rem;
+		overflow: hidden;
+		z-index: 0;
+	}
+
+	#progress {
+		width: 0%;
+		height: 100%;
+		background-color: var(--line-border--fill);
+		transition: width 0.3s ease;
+	}
+
+	.steps-inner {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		z-index: 1;
+	}
+
+	.step {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.circle {
+		height: 3.4rem;
+		aspect-ratio: 1;
+		margin-bottom: 1rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		background-color: var(--circle-color);
+		border: 0.2rem solid transparent;
+	}
+
+	.circle.completed {
+		background-color: var(--line-border--fill);
+		color: var(--primary-text--color);
+		transition: 0.3s ease;
+	}
+
+	.inner-circle {
+		height: 2.8rem;
+		aspect-ratio: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		background-color: var(--circle-color);
+		color: var(--secondary-text--color);
+		border: 0.1rem solid var(--secondary-text--color);
+		font: 500 1.5rem var(--font-family);
+	}
+
+	p {
+		margin-top: 0.4rem;
+		text-align: center;
+		line-height: 1.6;
+	}
+
+	.step-number {
+		color: var(--tertiary-text--color);
+		font: 500 1.6rem var(--font-family);
+	}
+
+	.step-sequence {
+		color: var(--primary-text--color);
+		font: 500 2rem var(--font-family);
+	}
+
+	.step-situation {
+		margin-top: 1rem;
+		padding: 0.5rem 1rem;
+		border-radius: 0.7rem;
+		font: 500 1.2rem var(--font-family);
+		transition: opacity 0.3s ease;
+	}
+
+	.step--completed {
+		background-color: var(--situation-text-color3);
+	}
+
+	.step--progress {
+		background-color: var(--situation-text-color2);
+	}
+
+	.step--pending {
+		background-color: var(--situation-text-color1);
+	}
+
+	.btn {
+		margin: 0.5rem;
+		padding: 0.5rem 2rem;
+		background: none;
+		color: var(--primary-text--color);
+		border: 0.1rem solid var(--primary-text--color);
+		border-radius: 0.7rem;
+		font: 500 1.6rem var(--font-family);
+		cursor: pointer;
+		transition: 0.2s ease;
+
+		&:active {
+			transform: scale(0.9);
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	.btn:disabled {
+		background-color: var(--line-border--empty);
+		cursor: not-allowed;
+	}
+}
+
+.footer {
+	height: 7rem;
+	margin-block: auto;
+	display: flex;
+	align-items: flex-end;
+	justify-content: end;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: var(--primary-text--color);
+
+	p {
+		font: 400 1.4rem var(--font-family);
+
+		a {
+			color: var(--primary-text--color);
+		}
+	}
+}
