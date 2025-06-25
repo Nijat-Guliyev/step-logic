@@ -20,6 +20,6 @@ _Progress tracker with smooth step transitions and responsive design_
 - 🎨 **CSS3** – Animations, layout styling, and media queries
 - ⚙️ **JavaScript (ES6)** – Step logic and interactive behavior
 
-## 👨‍💻🧑🏼 Author
+## 👨‍💻 Author
 
 Crafted by [**Nijat Guliyev**](https://www.linkedin.com/in/nijat-guliyev-1949a4294/). Explore more projects on my [GitHub profile](https://github.com/Nijat-Guliyev).
